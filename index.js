@@ -21,6 +21,7 @@ require('./sockets/socket');
 const publicPath = path.resolve( __dirname, 'public' );
 app.use( express.static( publicPath ) );
 app.use('/api/login', require('./routes/auth'));
+app.use('/api/usuario', require('./routes/usuario'));
 
 
 

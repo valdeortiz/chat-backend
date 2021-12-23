@@ -11,7 +11,16 @@
     <script src="socket.io/socket.io.js"></script>
 
     <script>
-        var socket = io();
+        // var socket = io("http://localhost:3000", {
+        //     extraHeaders: {
+        //         "x-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWMwZGYxOTY5YzcwMzQyM2Y2NWNhMDEiLCJpYXQiOjE2NDAyODE4MjUsImV4cCI6MTY0MDQ1NDYyNX0.PstLmqnwgq3Ga3jtiklFtWZPSoY2dSF25x2cC_UGaQ4"
+        //     }
+        // });
+        const socket = io({
+            extraHeaders: {
+                "x-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWMwZGYxOTY5YzcwMzQyM2Y2NWNhMDEiLCJpYXQiOjE2NDAyODE4MjUsImV4cCI6MTY0MDQ1NDYyNX0.PstLmqnwgq3Ga3jtiklFtWZPSoY2dSF25x2cC_UGaQ4"
+            }
+        });
 
         socket.on('connect', function() {
             console.log('Conectado al servidor')
